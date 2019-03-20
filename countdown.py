@@ -5,8 +5,20 @@ import RPi.GPIO as GPIO
 
 epoch = 1560247200 # epoch time of event
 
-text = "Countdown to ORL"
+text = "Countdown to ORL" # message on the top line
 
+""" Sets the epoch time to countdown to """
+def setEpoch(t):
+    global epoch
+    epoch = t
+
+""" Sets the top line text """
+def setText(m):
+    global text
+    text = m
+    if(len(text) > 16):
+            text = "Text must be < 16"
+            
 """ Checking that the text is less than 16 characters """
 if(len(text) > 16):
     text = "Text must be < 16"
@@ -16,12 +28,13 @@ if(len(text) > 16):
 LINE_1 = lcd.LCD_LINE_1
 LINE_2 = lcd.LCD_LINE_2
 
-lcd.lcd_init()
-lcd.lcd_string("###SETTING UP###", LINE_1)
-lcd.lcd_string("###SETTING UP###", LINE_2)
-
-lcd.lcd_string(text, LINE_1)
-try:
+def main():
+    lcd.lcd_init()
+    lcd.lcd_string("###SETTING UP###", LINE_1)
+    lcd.lcd_string("###SETTING UP###", LINE_2)
+    
+    lcd.lcd_string(text, LINE_1)
+    
     while(True):
         
         time.sleep(.05); # this is to give the pi a cool down
@@ -42,5 +55,11 @@ try:
         
         lcd.lcd_string("  %02d:%02d:%02d:%02d" % (days,hours,minutes,seconds), LINE_2)
 
-except KeyboardInterrupt:
-    GPIO.cleanup() # cleaning up GPIO pins
+
+if __name__ == '__main__':
+    try:
+        main()
+    except KeyboardInterrupt:
+        lcd.lcd_string("   ERROR KBI", LINE_1)
+        GPIO.cleanup() # cleaning up GPIO pins
+    
