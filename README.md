@@ -4,8 +4,8 @@ This is a library to display a countdown to a certain eepoch time on a 16x2 LCD 
 
 ## How to use
 
-At the moment the 'countdown.py' script is the one that actually runs the countdown. If you want to change the time to be counuted down to
-the 'orlando' variable is the one you are going to want to change. Replace the integer after orlando with the epoch time of your desired date.
+At the moment the `countdown.py` script is the one that actually runs the countdown. If you want to change the time to be counuted down to
+the `orlando` variable is the one you are going to want to change. Replace the integer after orlando with the epoch time of your desired date.
 You can generate the epoch time at [Epoch Converter](https://www.epochconverter.com/).
 
 ## PIN OUT FOR LCD
