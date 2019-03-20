@@ -8,9 +8,13 @@ To use this script set the epoch time you want to countdown to as the variable `
 Also you can change the countdown time with the method `setEpoch(time)`.
 You can generate the epoch time at [Epoch Converter](https://www.epochconverter.com/).
 
+**Note**: If the epoch time you set is less than the current epoch time an error will be thrown.
+
 Next, set the text you want to display as a string at variable `text`. You can also set the text by using `setText(message)`.
 
-**Note**: `text` must be shorter than 16 characters 
+**Note**: `text` must be shorter than 16 characters
+
+Finally run the `main()` method and the counutdown will begin.
 
 ## PIN OUT FOR LCD
 | LCD | GPIO |
