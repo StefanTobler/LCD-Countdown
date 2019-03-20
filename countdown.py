@@ -2,7 +2,7 @@ import time
 import lcd
 import math
 
-orlando = 1560247200 # time until June 11 6AM 2019
+orlando = 1560247200 # epoch time of June 11 6AM 2019 GMT-4
 
 """ Setting up the LCD Display """
 
@@ -15,6 +15,8 @@ lcd.lcd_string("###SETTING UP###", LINE_2)
 
 lcd.lcd_string("Countdown to ORL", LINE_1)
 while(True):
+
+    time.sleep(.05); # this is to give the pi a cool down
 
     temp_time = orlando - time.time()
 
