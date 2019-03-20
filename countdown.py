@@ -12,17 +12,19 @@ def setEpoch(t):
     global epoch
     epoch = t
 
+    if epoch < time.time():
+        lcd.lcd_string("TIME IN PAST", lcd.LCD_LINE_1)
+        GPIO.cleanup()
+        raise Exception("Current epoch is greater than time given")
+
 """ Sets the top line text """
-def setText(m):
+def setText(message):
     global text
-    text = m
+    text = message
+    
     if(len(text) > 16):
             text = "Text must be < 16"
-            
-""" Checking that the text is less than 16 characters """
-if(len(text) > 16):
-    text = "Text must be < 16"
-    
+                
 """ Setting up the LCD Display """
 
 LINE_1 = lcd.LCD_LINE_1
