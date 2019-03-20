@@ -4,13 +4,13 @@ This is a library to display a countdown to a certain eepoch time on a 16x2 LCD 
 
 ## How to use
 
-To use this script set the epoch time you want to countdown to as the variable 'epoch'. 
-Also you can change the countdown time with the method 'setEpoch(time)'.
+To use this script set the epoch time you want to countdown to as the variable `epoch`. 
+Also you can change the countdown time with the method `setEpoch(time)`.
 You can generate the epoch time at [Epoch Converter](https://www.epochconverter.com/).
 
-Next, set the text you want to display as a string at variable 'text'. You can also set the text by using 'setText(message)'.
+Next, set the text you want to display as a string at variable `text`. You can also set the text by using `setText(message)`.
 
-**Note**: 'text' must be shorter than 16 characters 
+**Note**: `text` must be shorter than 16 characters 
 
 ## PIN OUT FOR LCD
 | LCD | GPIO |
