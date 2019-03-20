@@ -1,7 +1,7 @@
 import time
 import lcd
 import math
-import Rpi.GPIO as GPIO
+import RPi.GPIO as GPIO
 
 epoch = 1560247200 # epoch time of event
 
