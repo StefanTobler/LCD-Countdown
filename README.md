@@ -31,6 +31,7 @@ Finally run the `main()` method and the counutdown will begin.
 | A | 5v |
 | K | gnd |
 
+**Note**: The GPIO pins can be changed in the `lcd.py` file.
 <hr/>
 
 Thank you Matt from raspberrypi-spy.co.uk for supplying the python file for GPIO LCD interaction. That script can be found [here](https://www.raspberrypi-spy.co.uk/2012/07/16x2-lcd-module-control-using-python/).
